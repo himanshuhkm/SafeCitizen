@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Admin MAP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/mapicon.png" rel="icon">
+  <link href="img/mapicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/venobox/venobox.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Main Stylesheet File -->
+
+
+  <script>
+        var loadmap = function () {
+            var sm = new scribblemaps.ScribbleMap('ScribbleMap', {
+                searchControl: true,
+                lineSettingsControl: true,
+                mapTypeControl: true,
+                fillColorControl: true,
+                lineColorControl: true,
+                undoControl: true,
+                zoomControl: true,
+                tools: ["menu", "edit", "drag", "eraser", "fill",
+                    "scribble", "flightLine", "line", "rectangle", "circle",
+                    "polygon", "label", "marker", "image"],
+                defaultTool: "edit",
+                startCenter: [13.080147108,80.287399292],
+                startZoom: 7,
+                startMapType: "road",
+                disableZoom: false
+            });
+        }
+    </script>
+ 
+    <script src="//scribblemaps.com/api/js?callback=loadmap" async></script>
+
+
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-right">
+          <div id="user_div" class="loggedin-div">
+            <li><button onclick="logout()" style="cursor: pointer; padding: 13px 30px; font-size: 18px; border: none; background-color: red; margin-left: 1190px;" > <span class="glyphicon glyphicon-log-in"></span> Logout</button></li>
+            </div>
+            
+            <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+                <script>
+                  // Initialize Firebase
+                  var config = {
+                    apiKey: "AIzaSyCIwV0SBYh_MLnbAHoZHCU_Q2ljldT6k54",
+                    authDomain: "crime-detection-map.firebaseapp.com",
+                    databaseURL: "https://crime-detection-map.firebaseio.com",
+                    projectId: "crime-detection-map",
+                    storageBucket: "crime-detection-map.appspot.com",
+                    messagingSenderId: "801533488001",
+                    appId: "1:801533488001:web:300337a631bb24ff55d680",
+                    measurementId: "G-P5340X758Z"
+                  };
+                  firebase.initializeApp(config);
+            
+                  
+            
+                  function logout() {
+                    firebase.auth().signOut();
+                    window.location.replace("home.html");
+                  }
+                </script>
+          
+      </ul>
+    </div>
+  </nav>
+  <script src="js/main.js"></script>
+  <!--==========================
+    Header
+  ============================-->
+  <div id="ScribbleMap" style="position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 5.5%;
+    z-index: -1"
+    </div>
+  
+
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/venobox/venobox.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  
+
+  <!-- Template Main Javascript File -->
+  
+</body>
+
+</html>

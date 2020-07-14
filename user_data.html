@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="user_data.css" />
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <title>User Data</title>
+  </head>
+  <div>
+    <div class="sos" >
+        <h2>SOS Details Form</h2>
+    </div>
+      <div id="container">  
+        <span class="input">
+          <input type="text" class="input__field " id="input-1"  placeholder="First Name" />
+          <label for="input-1" class="input__label">
+            <span class="input__label-content"></span>
+          </label>
+        </span>
+
+        <span class="input">
+          <input type="text" class="input__field" id="input-2" placeholder="Last Name" />
+          <label for="input-2" class="input__label">
+            <span class="input__label-content"></span>
+          </label>
+        </span>
+
+        <span class="input">
+          <input type="number" class="input__field" id="input-3" placeholder="Emergency Phone Number 1" />
+          <label for="input-3" class="input__label">
+            <span class="input__label-content"></span>
+          </label>
+        </span>
+
+        <span class="input">
+          <input type="text" class="input__field" id="input-4" placeholder="Emergency Phone Number" />
+          <label for="input-4" class="input__label">
+            <span class="input__label-content"></span>
+          </label>
+        </span>
+
+        <span class="input message">
+          <textarea class="input__field" id="input-5" placeholder="Address" ></textarea>
+          <label for="input-5" class="input__label">
+            <span class="input__label-content"></span>
+          </label>
+        </span>
+        
+
+        <button onclick=" window.location.replace('usermap_.html')"  id="send-button" type="button">Send</button>
+      </div>
+  </div>
+  </body>
+  <script>src="user_data.js" </script>  
+</html>

@@ -1,0 +1,178 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+    
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/topojson.v0.min.js"></script>
+	<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
+	<script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>User MAP</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" style="cursor: pointer;">Safe Citizens</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><button style="cursor: pointer; padding: 13px 30px; font-size: 18px; border: none; background-color: red;" onclick="alert('Authorities and your contacts have been updated with your location')" > <span ></span> SOS</button></li>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <div id="user_div" class="loggedin-div">
+      <li><button onclick="logout()" style="cursor: pointer; padding: 13px 30px; font-size: 18px; border: none; background-color: red;" > <span class="glyphicon glyphicon-log-in"></span> Logout</button></li>
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+          <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyCIwV0SBYh_MLnbAHoZHCU_Q2ljldT6k54",
+              authDomain: "crime-detection-map.firebaseapp.com",
+              databaseURL: "https://crime-detection-map.firebaseio.com",
+              projectId: "crime-detection-map",
+              storageBucket: "crime-detection-map.appspot.com",
+              messagingSenderId: "801533488001",
+              appId: "1:801533488001:web:300337a631bb24ff55d680",
+              measurementId: "G-P5340X758Z"
+            };
+            firebase.initializeApp(config);
+      
+            
+      
+            function logout() {
+              firebase.auth().signOut();
+              window.location.replace("home.html");
+            }
+          </script>
+    </ul>
+  </div>
+</nav>
+    <script src="js/main.js"></script>
+    <div id="map" style="height: 100%; width: 100%;"></div>
+
+    <script>
+        const mymap = L.map('map').setView([13.051662,80.210394], 13);
+        //const marker = L.marker([0, 0]).addTo(mymap);   
+        
+        const fireIcon = L.icon({
+            iconUrl: 'img/fire-emoji.png',
+            iconRetinaUrl: 'img/fire-emoji.png',
+            iconSize: [50, 42],
+            iconAnchor: [25, 16],
+        });
+
+        const gunIcon = L.icon({
+            iconUrl: 'img/gun-emoji.png',
+            iconRetinaUrl: 'img/gun-emoji.png',
+            iconSize: [50, 52],
+            iconAnchor: [25, 16],
+        });
+
+        const riotIcon = L.icon({
+            iconUrl: 'img/riot-emoji.png',
+            iconRetinaUrl: 'img/riot-emoji.png',
+            iconSize: [40, 52],
+            iconAnchor: [25, 16],
+        });
+
+        const crashIcon = L.icon({
+            iconUrl: 'img/crash-emoji.png',
+            iconRetinaUrl: 'img/crash-emoji.png',
+            iconSize: [70, 82],
+            iconAnchor: [25, 16],
+        });
+
+        
+
+
+        let points = [{
+            "latitude": "13.051662",
+            "longitude": "80.210394",
+            "incident": "fire",
+            "message": "fire at SRM VDP",
+            "category": "marker",
+            "radius": false
+        },
+        {
+            "latitude": "13.048614",
+            "longitude": "80.208642",
+            "incident": "shooting",
+            "message": "murder at arcot terrace complex",
+            "category": "marker",
+            "radius": false
+        },
+        {
+            "latitude": "13.062343",
+            "longitude": "80.214644",
+            "incident": false,
+            "message": "curfew zone",
+            "category": "circle",
+            "radius": 500
+        },
+        {
+            "latitude": "13.048427",
+            "longitude": "80.205663",
+            "incident": "crash",
+            "message": "car accident at Arcot Road",
+            "category": "marker",
+            "radius": false
+        }];
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaWQxMHQiLCJhIjoiY2s1OW15bXNkMHBmazNqbXVic2VocTR5aSJ9._soEdImW-q-3SEVAE-_99Q', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 25,
+            id: 'mapbox/streets-v11',
+            accessToken: 'your.mapbox.access.token'
+        }).addTo(mymap);
+
+        //const marker = L.marker([13.051662,80.210394], {icon: fireIcon}).addTo(mymap);
+
+        console.log('points.length');
+        let mapicon;
+        for(let i=0; i<points.length; i++)
+        {
+            if(points[i].category == 'circle')
+            {
+                var circle = L.circle([points[i].latitude, points[i].longitude], {
+                    color: 'red',
+                    fillColor: '#f03',
+                    fillOpacity: 0.5,
+                    radius: points[i].radius
+                })
+                .bindPopup(points[i].message).openPopup()
+                .addTo(mymap);
+
+            } else {
+                if(points[i].incident == 'fire')
+                {
+                    mapicon = fireIcon;
+                }
+                else if(points[i].incident == 'crash')
+                {
+                    mapicon = crashIcon;
+                }
+                else if(points[i].incident == 'shooting')
+                {
+                    mapicon = gunIcon;
+                }
+
+                L.marker([points[i].latitude, points[i].longitude], {icon: mapicon})
+                .bindPopup(points[i].message).openPopup()
+                .addTo(mymap);
+            }
+        }
+    </script>
+
+</body>
+</html>

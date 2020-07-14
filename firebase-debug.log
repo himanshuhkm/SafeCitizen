@@ -1,0 +1,105 @@
+[debug] [2020-01-14T01:00:41.633Z] ----------------------------------------------------------------------
+[debug] [2020-01-14T01:00:41.636Z] Command:       /usr/local/bin/firebase /home/harsh/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init
+[debug] [2020-01-14T01:00:41.636Z] CLI Version:   7.12.0
+[debug] [2020-01-14T01:00:41.636Z] Platform:      linux
+[debug] [2020-01-14T01:00:41.636Z] Node Version:  v12.13.1
+[debug] [2020-01-14T01:00:41.636Z] Time:          Tue Jan 14 2020 06:30:41 GMT+0530 (India Standard Time)
+[debug] [2020-01-14T01:00:41.636Z] ----------------------------------------------------------------------
+[debug] [2020-01-14T01:00:41.637Z] 
+[debug] [2020-01-14T01:00:41.643Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-14T01:00:41.643Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/harsh/Desktop/hackathon
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2020-01-14T01:00:47.399Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=100  
+ 
+[debug] [2020-01-14T01:00:47.787Z] <<< HTTP RESPONSE 200
+[info] i  Using project crime-detection-map (safe-citizens)
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2020-01-14T01:13:12.463Z] Error: ENOTDIR: not a directory, open '/home/harsh/Desktop/hackathon/home.html/404.html'
+    at Object.openSync (fs.js:440:3)
+    at Object.fs.openSync (pkg/prelude/bootstrap.js:490:32)
+    at Object.writeFileSync (fs.js:1265:35)
+    at Object.createFileSync (/home/harsh/.cache/firebase/tools/lib/node_modules/fs-extra/lib/ensure/file.js:34:6)
+    at Config.writeProjectFile (/home/harsh/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/config.js:178:8)
+    at /home/harsh/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/config.js:197:18
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-01-14T01:54:13.785Z] ----------------------------------------------------------------------
+[debug] [2020-01-14T01:54:13.787Z] Command:       /usr/local/bin/firebase /home/harsh/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init
+[debug] [2020-01-14T01:54:13.788Z] CLI Version:   7.12.0
+[debug] [2020-01-14T01:54:13.788Z] Platform:      linux
+[debug] [2020-01-14T01:54:13.788Z] Node Version:  v12.13.1
+[debug] [2020-01-14T01:54:13.788Z] Time:          Tue Jan 14 2020 07:24:13 GMT+0530 (India Standard Time)
+[debug] [2020-01-14T01:54:13.788Z] ----------------------------------------------------------------------
+[debug] [2020-01-14T01:54:13.788Z] 
+[debug] [2020-01-14T01:54:13.796Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-14T01:54:13.796Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/harsh/Desktop/SIH/hackathon
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2020-01-14T01:54:20.465Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-14T01:54:20.466Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-14T01:54:20.625Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-14T01:54:20.673Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=100  
+ 
+[debug] [2020-01-14T01:54:21.064Z] <<< HTTP RESPONSE 200
+[info] i  Using project crime-detection-map (safe-citizens)
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2020-01-14T01:55:02.618Z] >>> HTTP REQUEST GET https://www.gstatic.com/firebasejs/releases.json  
+ 
+[debug] [2020-01-14T01:55:02.711Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-14T01:55:02.903Z] Error: ENOTDIR: not a directory, open '/home/harsh/Desktop/SIH/hackathon/home.html/index.html'
+    at Object.openSync (fs.js:440:3)
+    at Object.fs.openSync (pkg/prelude/bootstrap.js:490:32)
+    at Object.writeFileSync (fs.js:1265:35)
+    at Object.createFileSync (/home/harsh/.cache/firebase/tools/lib/node_modules/fs-extra/lib/ensure/file.js:34:6)
+    at Config.writeProjectFile (/home/harsh/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/config.js:178:8)
+    at /home/harsh/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/config.js:197:18
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.
