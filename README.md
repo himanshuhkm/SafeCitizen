@@ -1,8 +1,5 @@
 ### from brain import idea
 
-
-### Team number: 11
-
 ### Topic:
 ```
  Cities have issues of safety. There is data available in cities, which indicates a particular 
@@ -38,18 +35,5 @@ The application also houses an SOS/panic button which enables the user
 to alert the local authorities with his/her location in case the user finds himself/herself 
 in any sort of danger.
 Thus providing a complete solution to make the citizens feel safe in their neighborhood.
-
-```
-
-### Team Members Detail:
-
-```
-Team leader: Shagun Attri(RA1811003040181)
-
-Team members: Hassan Shahid(RA1811003040262)
-              Nishant Raj(RA1811003040266)
-              Harsh Thakur(RA1811003040034)
-              Shriya Siddhartha(RA1811003040022)
-              Himanshu Kumar Maurya(RA1811003040058)
 
 ```
